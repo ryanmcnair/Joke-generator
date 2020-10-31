@@ -5,12 +5,12 @@ const baseUrl = apiKeys.apiKeys.databaseURL;
 
 const jokeSetup = () => new Promise((resolve, reject) => {
   axios
-    .get(`${baseUrl}/setup.json`).then((response) => resolve(response)).catch((error) => reject(error));
+    .get(`${baseUrl}`).then((response) => resolve(response.setup)).catch((error) => reject(error));
 });
 
 const jokePunchline = () => new Promise((resolve, reject) => {
   axios
-    .get(`${baseUrl}/punchline.json`).then((response) => resolve(response)).catch((error) => reject(error));
+    .get(`${baseUrl}`).then((response) => resolve(response.punchline)).catch((error) => reject(error));
 });
 
 export default { jokeSetup, jokePunchline };
